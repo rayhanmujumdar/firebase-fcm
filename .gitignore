@@ -2,7 +2,7 @@
 
 
 # worker-secrets
-/worker-secrets
+.firebase
 
 # dependencies
 /node_modules

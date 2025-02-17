@@ -23,7 +23,7 @@ const serviceWorkerConfig = {
 };
 
 fs.writeFileSync(
-    path.resolve(__dirname, '../worker-secrets/service-worker.json'),
+    path.resolve(__dirname, '../.firebase/service-worker.json'),
     JSON.stringify(serviceWorkerConfig, null, 2)
 );
 
