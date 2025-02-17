@@ -3,13 +3,13 @@ import { Message } from 'firebase-admin/messaging';
 
 import { NextRequest, NextResponse } from 'next/server';
 
-if (!admin.apps.length) {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const serviceAccount = require('@/worker-secret/service-worker.json');
-    admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-    });
-}
+// if (!admin.apps.length) {
+//     // eslint-disable-next-line @typescript-eslint/no-require-imports
+//     const serviceAccount = require('@/worker-secret/service-worker.json');
+//     admin.initializeApp({
+//         credential: admin.credential.cert(serviceAccount),
+//     });
+// }
 
 export async function POST(request: NextRequest) {
     const { token, title, message, link } = await request.json();
@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
     };
 
     try {
-        await admin.messaging().send(payload);
+        // await admin.messaging().send(payload);
         console.log('Notification sent!', payload);
 
         return NextResponse.json({
