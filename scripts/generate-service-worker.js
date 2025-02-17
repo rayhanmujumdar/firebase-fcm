@@ -1,6 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import dotenv from 'dotenv';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const fs = require('fs');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const dotenv = require('dotenv');
 
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 
