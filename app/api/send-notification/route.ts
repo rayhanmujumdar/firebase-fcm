@@ -1,13 +1,16 @@
 import admin from 'firebase-admin';
 import { Message } from 'firebase-admin/messaging';
-
 import { NextRequest, NextResponse } from 'next/server';
+import serviceAccount from '@/worker-secrets/service-worker.json';
 
 if (!admin.apps.length) {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const serviceAccount = require('@/worker-secrets/service-worker.json');
+    console.log(serviceAccount);
     admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
+        credential: admin.credential.cert({
+            projectId: process.env.FIREBASE_PROJECT_ID,
+            privateKey: process.env.SECRET_FIREBASE_PRIVATE_KEY,
+            clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+        }),
     });
 }
 
@@ -16,7 +19,7 @@ export async function POST(request: NextRequest) {
     const payload: Message = {
         token,
         notification: {
-            title: title,
+            title,
             body: message,
         },
         webpush: link && {
