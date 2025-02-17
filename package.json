@@ -6,7 +6,8 @@
     "dev": "next dev --experimental-https --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-service-worker": "node scripts/generate-service-worker.js"
   },
   "dependencies": {
     "firebase": "^11.3.1",
