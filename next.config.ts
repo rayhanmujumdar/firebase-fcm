@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     async headers() {
         return [
             {
-                source: './public/firebase-messaging-sw.js',
+                source: '/public/firebase-messaging-sw.js',
                 headers: [{ key: 'Service-Worker-Allowed', value: '/' }],
             },
         ];
