@@ -1,10 +1,8 @@
 import admin from 'firebase-admin';
 import { Message } from 'firebase-admin/messaging';
 import { NextRequest, NextResponse } from 'next/server';
-import serviceAccount from '@/worker-secrets/service-worker.json';
 
 if (!admin.apps.length) {
-    console.log(serviceAccount);
     admin.initializeApp({
         credential: admin.credential.cert({
             projectId: process.env.FIREBASE_PROJECT_ID,
