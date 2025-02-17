@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev --experimental-https --turbopack",
-        "build": "npm run build-sw && npm run generate-service-worker && next build",
+        "build": "npm run generate-service-worker && next build",
         "start": "next start",
         "lint": "next lint",
         "generate-service-worker": "node scripts/generate-service-worker.js",
