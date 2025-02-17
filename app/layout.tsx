@@ -23,9 +23,6 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const service = (await import('@/worker-secret/service-worker.json'))
-        .default;
-    console.log(service);
     return (
         <html lang="en">
             <body

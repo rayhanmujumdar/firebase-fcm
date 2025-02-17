@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 if (!admin.apps.length) {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const serviceAccount = require('@/worker-secret/service-worker.json');
+    const serviceAccount = require('@/worker-secrets/service-worker.json');
     admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
     });
