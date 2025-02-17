@@ -2,7 +2,7 @@
 
 
 # file
-/worker-secret
+service-worker.json
 
 # dependencies
 /node_modules
